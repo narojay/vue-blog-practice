@@ -1,11 +1,13 @@
 <template>
   <el-container>
     <el-aside :width="width">
-      <el-button type="primary" @click="tt">主要按钮</el-button>
+      <el-button type="primary" @click="tt">主要</el-button>
     </el-aside>
     <el-container>
       <el-header>Header</el-header>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
       <el-footer>Footer</el-footer>
     </el-container>
   </el-container>
@@ -21,7 +23,7 @@ export default {
   },
   methods: {
     tt: function () {
-      this.num = 10 == this.num ? 200 : 10;
+      this.num = 50 == this.num ? 200 : 50;
       this.width = this.num + "px";
     },
   },
@@ -40,7 +42,7 @@ export default {
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
-  color: #333;
+  color: rgb(143, 29, 29);
 }
 
 .el-aside {
@@ -48,6 +50,8 @@ export default {
   color: #333;
   text-align: center;
   line-height: 100vh;
+  overflow: hidden;
+
   /* 
    vh就是当前屏幕可见高度的1%，也就是说
 
